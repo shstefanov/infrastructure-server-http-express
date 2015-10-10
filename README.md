@@ -181,11 +181,11 @@ The Page class have abiity to perform more complex tasks for using as handlers.
 
 
         // Specil string as handler
+        "GET /path_3" : "controller.UsersController.findById | req.session.user_id | "user",
         // The string has 3 parts, separated with |
         // 1 - structure target that will be called
         // 2 - arguments to be passed. Will be produced arguments getter function that gives req, res and _ (underscore as helper) and will return argument values as defined
         // 3 - path, under which result will be mounted on res.data ( can be dot notated )
-        "GET /path_3" : "controller.UsersController.findById | req.session.user_id | "user",
         // Special handler will be produced for this url, equivalent to:
         // "GET /path_3" : function(req, res, next){
         //   env.i.do("controller.UsersController.findById", req.session.user_id, function(err, user){
