@@ -133,6 +133,6 @@ The data, attached to response object, but some properties will e handled and ch
       "config": {},      // This will extend config, defined in page class
       "title":           // If provided, will be used instead of title defined in page class
       "page":            // page instance itself, in case it holds helpers functions or some dinamic data
-      // Everithing else you can attach in handlers
+      // Everithing else you can attach to res.dta in handlers
     }
 
