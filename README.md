@@ -132,7 +132,7 @@ The data, attached to response object, but some properties will e handled and ch
       "javascripts": [], // Styles that will be added to javascripts, defined in page class
       "config": {},      // This will extend config, defined in page class
       "title":           // If provided, will be used instead of title defined in page class
-      "page":            // page instance itself, in case it holds helpers functions or some dinamic data
+      "page":  page      // page instance itself, in case it holds helpers functions or some dinamic data
       // Everithing else you can attach to res.dta in handlers
     }
 
