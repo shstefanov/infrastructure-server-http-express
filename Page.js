@@ -170,18 +170,18 @@ var Page = Class.extend("Page", {
   },
 
   render: function(req, res){
-    var data   = this.assets(res.data);
+    var data   = this.assets(res.data, req, res);
     data.cache = this.env.helpers.resolve(this.env.config, "views.cache");
     res.render(data.template || this.template, data);
   },
 
-  assets: function(data){
+  assets: function(data, req, res){
     data                = data || {};
     data.meta           = _.extend({},this.meta||{},data.meta||{});
-    data.javascripts    = _.union(this.javascripts || [], data.javascripts || [], this.apps||[]);
+    data.javascripts    = _.union(this.javascripts || [], data.javascripts || []);
     data.styles         = _.union(this.styles || [], data.styles || []);
     data.config         = JSON.stringify(_.extend({root:this.root}, this.config, data.config));
-    data.title          = data.title || (typeof this.title === "function"?this.title(data) : this.title);
+    data.title          = data.title || (typeof this.title === "function"?this.title(req, res) : this.title);
     data.page           = this;
     return data;
   }

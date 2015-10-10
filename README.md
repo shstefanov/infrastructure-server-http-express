@@ -82,6 +82,7 @@ In your pages structure directory you need to place files that looks like
         root:          "/dashboard",         // Root path that will be prependen to matching url
         template:      "dashboard",          // The template to be rendered (this will point to templates folder -> dashboard.jade)
         title:         "Dashboard - Orbits", // page title, also it can be function
+        // title: function(req, res){ return "Page title"; }
 
         meta: { // metatags
           "name": "content"
