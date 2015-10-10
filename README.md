@@ -223,3 +223,7 @@ The Page class have abiity to perform more complex tasks for using as handlers.
       });
     };
 
+Api class
+=========
+
+Same as Page, but withous the title, styles, javascripts, metatags, configs. Just renders collected in res.data data as json
