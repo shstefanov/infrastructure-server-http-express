@@ -1,4 +1,4 @@
-var _     = require("../infrastructure/node_modules/underscore");
+var _     = require("underscore");
 var Class = require("../infrastructure/lib/Class");
 var path  = require("path");
 
@@ -83,7 +83,7 @@ var Page = Class.extend("Page", {
     var argumentsGetter = this.createArgumentsGetter( parts[1] );
     var dataPatcher     = this.createDataPatcher( path || parts[2] );
     var finalizer       = this.getFinalizer( isPartOfChain );
-    var _               = require("../infrastructure/node_modules/underscore");
+    var _               = require("underscore");
     return function(req, res, next){
       var args = argumentsGetter( req, res, _ );
       args.unshift(address);

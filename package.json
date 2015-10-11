@@ -6,9 +6,10 @@
     "name": "Stefan Stefanov",
     "email": "s.h.stefanov@mail.bg"
   },
-  
+  "dependencies":{
+    "underscore": "latest"
+  },
   "devDependencies": {
-    "underscore": "latest",
     "mocha": "latest"
   },
 
