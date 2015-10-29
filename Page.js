@@ -5,11 +5,12 @@ var path  = require("path");
 var line = "       ";
 
 function noArguments(){ return []; }
-function commonDataSetter ( res, data      ) { res.data = data;                    }
-function callNext         ( req, res, next ) { next();                             }
-function callRender       ( req, res, next ) { this.render(req, res);              }
-function finalizeChain    ( req, res, next ) { next();                             }
-function createDataNS     ( req, res, next ) { res.data = res.data || {};  next( null, req, res ); }
+function dataResultExtender (res, data       ) { _.extend(res.data, data);           }
+function commonDataSetter   ( res, data      ) { res.data = data;                    }
+function callNext           ( req, res, next ) { next();                             }
+function callRender         ( req, res, next ) { this.render(req, res);              }
+function finalizeChain      ( req, res, next ) { next();                             }
+function createDataNS       ( req, res, next ) { res.data = res.data || {};  next( null, req, res ); }
 
 var Page = Class.extend("Page", {
 
@@ -102,6 +103,7 @@ var Page = Class.extend("Page", {
   },
 
   createDataPatcher: function( path ){
+    if(!path) return dataResultExtender;
     var params = path.match(/\{\w+\}/gi);
     var helpers   = this.env.helpers;
     if(params){
