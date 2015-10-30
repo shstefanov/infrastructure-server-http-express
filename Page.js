@@ -1,5 +1,5 @@
 var _     = require("underscore");
-var Class = require("../infrastructure/lib/Class");
+var Class = require("infrastructure/lib/Class");
 var path  = require("path");
 
 var line = "       ";
